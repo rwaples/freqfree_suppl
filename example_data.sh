@@ -5,6 +5,7 @@
 ANGSD="$HOME/programs/angsd/angsd"
 realSFS="$HOME/programs/angsd/misc/realSFS"
 IBS="$HOME/programs/angsd/misc/ibs"
+SAMTOOLS="samtools"
 
 # download the example data
 wget http://popgen.dk/software/download/angsd/bams.tar.gz
@@ -43,7 +44,7 @@ done
 # here we will use an ancestral state file
 # download and index the ancestral state fasta file
 wget http://popgen.dk/software/download/angsd/hg19ancNoChr.fa.gz
-samtools faidx hg19ancNoChr.fa.gz
+$SAMTOOLS faidx hg19ancNoChr.fa.gz
 
 
 # run doSAF on each individual
@@ -109,4 +110,4 @@ Rscript \
 
 # the IBS method in ANGSD indexes individuals as they appear in the filelist
 # (zero-indexed)
-!cat all.filelist
+cat all.filelist
